@@ -55,7 +55,6 @@ body {
     border-radius: 50%;
 }
 
-.cardWrapper {}
 
 .cardDetail {
     max-width: 80%;
@@ -83,7 +82,10 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+
 }
+
+
 
 
 
