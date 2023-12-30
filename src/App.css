@@ -1,15 +1,13 @@
 .App {
-  width: 100vw;
-  height: 100vh;
+  height: 100vh; 
   background-color: #6a7dee;
 
 }
 
 .main_container {
   display: flex;
-  flex-direction: column;
-  width: 80%;
-  /* row-gap: 20px; */
+  /* flex-direction: column; */
+  margin: 20px;
 }
 
 .heading {
