@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import '../../apiService/UserCard.css'
+import './UserCardListing.css'
 
 export default function UserListingPage({ id, firstName, gender, image, phone, birthDate, address, maidenName, userAgent, email }) {
     const dateObj = new Date(`${birthDate}`);

@@ -5,7 +5,7 @@ import ErrorPage from './components/ErrorPage/CustomErrorPage';
 import UserListingPage from './components/User/UserListingPage';
 import { fetchUserDataList } from './apiService/userService';
 import Loader from './components/loader/Loader';
-import './apiService/UserCard.css';
+import './components/User/UserCardListing.css';
 
 function App() {
   const [userList, setUserList] = useState([]);
