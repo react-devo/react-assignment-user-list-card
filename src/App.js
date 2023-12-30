@@ -6,12 +6,15 @@ import UserListingPage from './components/User/UserListingPage';
 import { fetchUserDataList } from './apiService/userService';
 import Loader from './components/loader/Loader';
 import './components/User/UserCardListing.css';
+import Paginations from './components/pagination/CustomPagination';
 
 function App() {
   const [userList, setUserList] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
   const [searchKey, setSearchKey] = useState('')
+  const [page, setPage] = useState(1);
+  let perPage = 12;
 
   useEffect(() => {
     fetchUserListData()
@@ -49,6 +52,7 @@ function App() {
       );
       setUserList(filterUserList);
     } else {
+      setLoading(true);
       fetchUserListData();
     }
   };
@@ -60,30 +64,36 @@ function App() {
     filterByName(value);
 
   }
-  return (<>
-    {/* <UserListingPage /> */}
-    <div className="pageWrapper">
-      {<div className="siteWidth">
-        <div className="titleBar">
-          <h2>Rails and React II: A Real USE CASE</h2>
-        </div>
-        <div className="filterBar">
-          <input type="text" placeholder="Search people..." value={searchKey} onChange={(e) => hanldeInputChange(e.target.value)} />
-        </div>
-        {error && <ErrorPage error={error} />}
-        {loading && <Loader />}
-        {userList?.length > 0 ? <div className="cardBlock">
-          {userList.slice(0,12).map((user) => {
-            
-            return (
-              <UserListingPage key={user.id} {...user} />
-            )
-          })}
 
-        </div> : !loading && <p style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: "300px", color: 'white', }}>No result found.</p>}
-      </div>}
-    </div>
-  </>
+  // handle next btn
+  const handleNextBton = (pageNum) => {
+    page !== pageNum && setPage(pageNum)
+  }
+  return (
+    <>
+      <div className="pageWrapper">
+        {<div className="siteWidth">
+          <div className="titleBar">
+            <h3>Rails and React II: A Real Use Case</h3>
+          </div>
+          <div className="filterBar">
+            <input type="text" placeholder="Search people..." value={searchKey} onChange={(e) => hanldeInputChange(e.target.value)} />
+          </div>
+          {error && <ErrorPage error={error} />}
+          {loading && <Loader />}
+          {userList?.length > 0 ? <div className="cardBlock">
+            {userList.slice(page * perPage - 12, page * perPage).map((user) => {
+              return (
+                <UserListingPage key={user.id} {...user} />
+              )
+            })}
+
+            <Paginations page={page} setPage={setPage} userList={userList} perPage={perPage} handleNextBton={handleNextBton} />
+
+          </div> : !loading && <p style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: "300px", color: 'white', }}>No result found.</p>}
+        </div>}
+      </div>
+    </>
   );
 
 

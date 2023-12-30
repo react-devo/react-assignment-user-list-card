@@ -1,0 +1,27 @@
+.input_box {
+    align-self: end;
+    
+}
+
+.index__btn {
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.num__container {
+    padding: 10px;
+    border: 1px solid rgb(185, 170, 170);
+    color: #fff;
+    cursor: pointer;
+}
+
+.active__index {
+    background-color: darkgrey;
+}
+
+.pagination {
+    margin-top: 20px;
+}

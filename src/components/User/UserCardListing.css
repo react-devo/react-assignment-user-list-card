@@ -2,7 +2,7 @@ body {
     background: hsl(211.2deg 29.07% 33.73%);
 }
 
-.titleBar h2 {
+.titleBar h3 {
     font-size: 2rem;
     font-weight: 700;
     color: #fff;
@@ -22,7 +22,6 @@ body {
     position: relative;
     color: #fff;
 }
-
 .cardHead {
     display: flex;
     align-items: center;
@@ -35,7 +34,9 @@ body {
 .cardHead span {
     padding-right: 0.5rem;
 }
-
+.cardDetail h4 {
+    margin-bottom: 0.25rem;
+}
 .profileImg {
     max-width: 6rem;
     width: 100%;
@@ -55,37 +56,33 @@ body {
     border-radius: 50%;
 }
 
+.cardWrapper {
+    flex: 0 0 32%;
+    background: hsl(205.71deg 9.86% 86.08%);
+}
 
 .cardDetail {
     max-width: 80%;
     width: 100%;
-    padding-left: 7rem;
-    color: #fff;
-
+    padding-left: 8rem;
 }
 
 .cardDetail p {
     display: flex;
     align-items: center;
     color: #fff;
-    margin-bottom: 0;
-
 }
 
 .cardDetail p span svg {
     width: 1rem;
     height: 1rem;
-    color: #fff
 }
 
 .cardBlock {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-
+    display: flex;
+    gap: 1.25rem;
+    flex-wrap: wrap;
 }
-
-
 
 
 
@@ -93,23 +90,24 @@ body {
     margin: 0;
     font-size: 1.5rem;
     font-weight: 700;
-    padding-left: 2px;
 }
 
 .cardDetail p {
-    margin: 0.25rem;
+    margin: 0.25rem 0;
 }
-
+.pageWrapper {
+    padding-bottom: 3rem;
+}
 .cardItem {
     background: hsl(0deg 0% 100%);
+    flex: 0 0 100%;
 }
 
 .p-2 {
     padding: 0.5rem;
     font-style: italic;
-    margin-top: 15px;
-    letter-spacing: 0.5px;
     line-height: 1.5;
+    font-weight: 500;
 }
 
 .cardBottom {
