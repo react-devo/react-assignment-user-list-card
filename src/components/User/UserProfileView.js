@@ -38,12 +38,11 @@ export default function UserProfileView() {
                         </div>
 
                         <div className="user-details">
-                            <h1>{user?.firstName}</h1>
+                            <h1>{user?.firstName} {user?.maidenName}</h1>
                             <p>Gender: {user?.gender}</p>
                             <p>Phone: {user?.phone}</p>
                             <p>Birth Date: {user?.birthDate}</p>
                             <p>Address: {user?.address?.address}</p>
-                            <p>Maiden Name: {user?.maidenName}</p>
                             <p>User Agent: {user?.userAgent?.length > 30 ? `${user?.userAgent?.slice(0, 30)}..` : user?.userAgent}</p>
                             <p>Email: {user?.email}</p>
                         </div>
